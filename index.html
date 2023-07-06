@@ -7,7 +7,6 @@
    <link rel="preconnect" href="https://fonts.googleapis.com">
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -52,14 +51,19 @@
             </div>
          </section>
          <div class="slider">
-            <div class="swiper">
-               <div class="swiper-wrapper">
-                  <div class="swiper-slide" style="background-image: url(images/slide-1.jpg);"></div>
-                  <div class="swiper-slide" style="background-image: url(images/slide-2.jpg);"></div>
-                  <div class="swiper-slide" style="background-image: url(images/slide-3.jpg);"></div>
-                  <div class="swiper-slide" style="background-image: url(images/slide-4.jpg);"></div>
+            <div class="slider-wrapper">
+               <div class="slider-inner">
+                  <div class="slider-slide showing" style="background-image: url(images/slide-1.jpg);"></div>
+                  <div class="slider-slide" style="background-image: url(images/slide-2.jpg);"></div>
+                  <div class="slider-slide" style="background-image: url(images/slide-3.jpg);"></div>
+                  <div class="slider-slide" style="background-image: url(images/slide-4.jpg);"></div>
                </div>
-               <div class="swiper-pagination"></div>
+               <div class="slider-pagination">
+                  <div class="slider-pagination-dots slider-pagination-dots-active"></div>
+                  <div class="slider-pagination-dots"></div>
+                  <div class="slider-pagination-dots"></div>
+                  <div class="slider-pagination-dots" display="block"></div>
+               </div>
             </div>
          </div>
       </main>
@@ -162,7 +166,6 @@
       </footer>
    </div>
    
-   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
    <script src="js/main.js"></script>
 </body>
 </html>

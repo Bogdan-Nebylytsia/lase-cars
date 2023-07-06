@@ -40,13 +40,14 @@ body {
 .header-main {
    background-color:transparent;
    position: absolute;
-   z-index: 6;
+   z-index: 7;
    left: 0;
    right: 0;
 }
 
 .container {
-   max-width: 1200px;
+   max-width: 1220px;
+   padding: 0 10px;
    margin: 0 auto;
 }
 
@@ -127,6 +128,7 @@ main {
    z-index: 5;
    left: 0;
    right: 0;
+   z-index: 6;
 }
 
 .title {
@@ -146,7 +148,12 @@ main {
    font-weight: 700;
 }
 
-.swiper::after {
+.slider {
+   position: relative;
+   height: 100vh;
+}
+
+.slider::after {
    content: '';
    background-color: rgba(21, 21, 21,.3);
    position: absolute;
@@ -157,26 +164,55 @@ main {
    top: 0;
 }
 
-.swiper-slide {
+
+.slider-slide {
+   position: absolute;
+   width: 100%;
    background-repeat: no-repeat;
    background-size: cover;
    background-position: center;
    height: 100vh;
-}
-.swiper-pagination {
-   margin-bottom: 10px;
+   z-index: -5;
+   opacity: 0;
+   transition: opacity 1.5s ease-in-out;
 }
 
-.swiper-pagination-bullet {
+.showing {
+   opacity: 1;
+}
+
+.slider-pagination {
+   min-height: 6px;
+   max-width: 600px;
+   position: absolute;
+   display: flex;
+   left: 0;
+   right: 0;
+   align-items: center;
+   bottom: 20px;
+   margin: 0 auto;
+}
+
+.slider-pagination-dots {
    height: 3px;
    width: 120px;
-   border-radius: 0;
    background: #151515;
-   opacity: 1;
-   margin: 0 15px !important;
+   cursor: pointer;
+   margin: 0 15px ;
+   z-index: 6;
 }
 
-.swiper-pagination-bullet-active {
+.slider-pagination-dots-active,  .slider-pagination-dots:hover{
    height: 6px;
    background-color: #fff;
 }
+
+/* .fade {
+   animation-name: fade;
+   animation-duration: 4s;
+}
+
+@keyframes fade {
+   from{opacity: 0.1;}
+   to{opacity: 1;}
+} */
