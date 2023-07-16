@@ -13,11 +13,11 @@ function showSlide() {
   slideIndex++;
 
   if (slideIndex >= slides.length) {
-      slideIndex = 0;
+    slideIndex = 0;
   }
 
   slides[slideIndex].classList.add('showing');
-  
+
   dots.forEach(dot => {
     dot.className = dot.className.replace('slider-pagination-dots-active', '');
   });
@@ -32,13 +32,13 @@ dots.forEach((dot, index) => {
   dot.addEventListener('click', () => {
     console.log(index);
     if (index === 0) {
-      slideIndex = slides.length-1;
+      slideIndex = slides.length - 1;
     } else {
-      slideIndex = index-1;
+      slideIndex = index - 1;
     }
 
     console.log(slideIndex);
-    
+
     showSlide();
   });
 });
@@ -70,4 +70,13 @@ function open(evt) {
   });
 
   document.querySelector(`#${button}`).classList.add('tabs__content-item-active');
+}
+
+const btn = document.querySelector('.menu__button'),
+  menu = document.querySelector('.menu__list');
+
+btn.addEventListener('click', openMenu);
+
+function openMenu() {
+  menu.classList.toggle('menu__list-active');
 }
